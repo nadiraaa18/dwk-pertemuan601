@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luas dan Keliling Ruang Bangun Persegi</title>
+  <style>
+    *{
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .tengah{
+      display: flex;
+      justify-content: center;
+    }
+    .card{
+      width: 40%;
+      box-shadow: 0 4px 8px 0 rgb(184, 92, 92);
+      transition: 0.3s;
+      border-radius: 20px;
+    }
+    #txBARU{
+      font-size: 26px;
+    }
+    .cardbody{
+      padding: 2px 16px;
+    }
+    .cardfooter{
+      padding: 8px;
+      background-color: rgba(206, 107, 206, 0.286);
+      display: flex ;
+      justify-content: right;
+    }
+    label{
+      font-weight: bold;
+      font-size: 14px;
+    }
+    input[type=text]{
+      width: 100%;
+      padding: 2px;
+      margin: 8px 0px;
+    }
+    button{
+      border: none;
+      border-radius: 8px;
+      background-color: rgba(56, 191, 182, 0.434);
+      color: white;
+      font-weight: bold;
+      padding: 8px 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="tengah">
+
+    <div class="card">
+
+  <h1 id="txBARU">Ruang Bangun Persegi</h1>
+
+  <div class="cardbody">
+
+  <form action="">
+    <label>Nilai Panjang (Meter)</label>
+    <input type="text" name="txPANJANG" id="txPANJANG"> <br>
+    <label>Nilai Lebar (Meter)</label>
+    <input type="text" name="txLEBAR" id="txLEBAR">
+  </form>
+
+
+  <div id="txHASIL">Nilai Luas dan Keliling</div>
+</div>
+
+  <div class="cardfooter">
+  <button onclick="pesan();">Hitung Luas dan keliling</button>
+  <!-- <script defer type="text/javascript" src="/main.js"></script> -->
+</div>
+  </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  <script>
+    function pesan(){
+      // alert("Belajar Java Script")
+     let PJ = document.getElementById("txPANJANG").value
+     let LB = document.getElementById("txLEBAR").value
+
+    //  Proses Hitung Luas
+    let LUAS = PJ*LB
+    let PJLB = (parseFloat(PJ) + Number(LB))
+    let KEL = 2*PJLB
+
+    let hsl = "Hitung Luas Persegi<br>Luas= Panjang X Lebar <br>"
+    hsl += "Luas = "+PJ+" M X "+LB+" M <br>"
+    hsl += "Luas = M<sup>2</sup><br>"+LUAS+"<br><br>"
+    hsl += "Hitung Keliling Persegi<br>"
+    hsl += "Keliling = 2 X (Panjang+Lebar)<br>"
+    hsl += "Keliling = 2 X ("+PJ+ " M +" +LB+ " M)<br>"
+    hsl += "Keliling = 2 X "+PJLB+ "<br>"
+    hsl += "Keliling = "+KEL+" Meter"
+                                   
+      document.getElementById("txHASIL").innerHTML=hsl
+    }
+    
+  </script>
+</body>
+</html>
